@@ -137,3 +137,20 @@ button:hover{
 .selected-menu{
     padding-left: 2em;
 }
+
+
+.restaurant-info{
+    display: flex;
+    flex-direction: row;
+}
+
+iframe{
+    width: 100%;
+    height: 80%;
+    padding-left: 2em;
+}
+
+label{
+    text-align: justify;
+}
+
