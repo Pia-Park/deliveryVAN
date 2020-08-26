@@ -150,7 +150,8 @@ iframe{
     padding-left: 2em;
 }
 
-label{
-    text-align: justify;
+.selected-detail{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
-
