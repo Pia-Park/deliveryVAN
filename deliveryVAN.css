@@ -12,8 +12,13 @@ h1{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    text-align: center;
+    text-align: center;  
 }
+
+.background-img{
+    opacity: 0.5;
+}
+
 
 .container {
     display: flex;
