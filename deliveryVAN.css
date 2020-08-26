@@ -75,3 +75,14 @@ button:hover{
     background-color: rgb(23, 133, 127);
     color: yellow;
 }
+
+
+.menu-detail{
+    display: flex;
+    flex-direction: row;
+    /* justify-content: center; */
+}
+
+.selected-menu{
+    padding-left: 2em;
+}
