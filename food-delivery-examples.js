@@ -24,14 +24,43 @@ let menu = {
 
   getItemByID: function(itemID) {
     // should return a sentence containing all of the info about the product (name price, and description)
+  
+    console.log(this[itemID].name + " costs $" + this[itemID].price + " and it has " + this[itemID].description);
+
   },
 
   getItemByName: function(itemName) {
      // should return a sentence containing all of the info about the product (name price, and description)
+     
+     let itemID = Object.keys(menu);
+     for(i=0; i<itemID.length; i++){
+
+      if(this[itemID[i]].name === itemName) {
+        console.log(this[itemID[i]].name + " costs $" + this[itemID[i]].price + " and it has " + this[itemID[i]].description);
+      }  
+    }
   },
 
   addMenuItem: function(name, price, desc) {
     //will need a random id as well when creating a new product. console log the products to confirm it was added. 
+    let randomID = Math.floor((1 + Math.random()) * 0x10000).toString(16).substring(1);
+    
+    menu[randomID] = {
+        id: randomID,
+        name: name,
+        price: price,
+        description: desc
+      };
+
+    let arr = Object.keys(menu);
+
+    arr.forEach(function(elem){
+      console.log(menu[elem].name);
+    });
+    // for(i = 0; i < arr.length; i++) {
+
+    // }
+
   },
 
   cartTotal: function(arrayOfIDs) {
@@ -39,3 +68,9 @@ let menu = {
   }
 
 }
+
+//menu.getItemByID("p01");
+
+//menu.getItemByName('Burrito');
+
+menu.addMenuItem('Jjampong','14','it is a spicy Korean-style noodles');
