@@ -54,17 +54,26 @@ let menu = {
 
     let arr = Object.keys(menu);
 
-    arr.forEach(function(elem){
-      console.log(menu[elem].name);
-    });
-    // for(i = 0; i < arr.length; i++) {
-
-    // }
-
+    for(const obj in menu) {
+      console.log(menu[obj].name);
+    }
   },
 
   cartTotal: function(arrayOfIDs) {
     // this function will take in an array of item Ids, and using this, will add together the total cost of all the items. 
+  
+  let total = 0;
+
+  arrayOfIDs.forEach(function(elem) {
+    Object.keys(menu).forEach(function(menuElem){
+      if(elem === menuElem) {
+      total += menu[elem].price;
+      }
+    })
+
+  });
+
+  console.log(`The total cost of ${arrayOfIDs.join(', ')} is $${total}`);
   }
 
 }
@@ -73,4 +82,6 @@ let menu = {
 
 //menu.getItemByName('Burrito');
 
-menu.addMenuItem('Jjampong','14','it is a spicy Korean-style noodles');
+//menu.addMenuItem('Jjampong','14','it is a spicy Korean-style noodles');
+
+menu.cartTotal(['p01','p05', 'p02']);
