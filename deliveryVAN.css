@@ -198,8 +198,14 @@ h3{
 .img-hover{
     margin: 5px;
     border: white 2px solid;
+    border-radius: 20px;
 }
 
 .img-hover:hover{
     border: turquoise 4px solid;
+}
+
+.place-order-body{
+    padding-left: 2em;
+   
 }
