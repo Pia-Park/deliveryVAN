@@ -25,7 +25,7 @@ let menu = {
   getItemByID: function(itemID) {
     // should return a sentence containing all of the info about the product (name price, and description)
   
-    console.log(this[itemID].name + " costs $" + this[itemID].price + " and it has " + this[itemID].description);
+    console.log(this[itemID].name + " costs $" + this[itemID].price + ". DESCRIPTION: " + this[itemID].description);
 
   },
 
@@ -36,7 +36,7 @@ let menu = {
      for(i=0; i<itemID.length; i++){
 
       if(this[itemID[i]].name === itemName) {
-        console.log(this[itemID[i]].name + " costs $" + this[itemID[i]].price + " and it has " + this[itemID[i]].description);
+        console.log(this[itemID[i]].name + " costs $" + this[itemID[i]].price + " and it is " + this[itemID[i]].description);
       }  
     }
   },
@@ -52,11 +52,14 @@ let menu = {
         description: desc
       };
 
-    let arr = Object.keys(menu);
+    Object.keys(menu).forEach(function(elem) {
+      if(elem === menu[elem].id)
+      {
+     // console.log(menu[elem].name + " costs $" + menu[elem].price);
+      menu.getItemByID(elem);
+     }
+    });
 
-    for(const obj in menu) {
-      console.log(menu[obj].name);
-    }
   },
 
   cartTotal: function(arrayOfIDs) {
@@ -74,7 +77,7 @@ let menu = {
   });
 
   console.log(`The total cost of ${arrayOfIDs.join(', ')} is $${total}`);
-  }
+}
 
 }
 
@@ -82,6 +85,6 @@ let menu = {
 
 //menu.getItemByName('Burrito');
 
-//menu.addMenuItem('Jjampong','14','it is a spicy Korean-style noodles');
+//menu.addMenuItem('Jjampong','14','a spicy Korean-style noodles');
 
-menu.cartTotal(['p01','p05', 'p02']);
+menu.cartTotal(['p01', 'p02', 'p03']);
